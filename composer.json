@@ -1,0 +1,9 @@
+{
+    "name": "basic-app/fontawesome7",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BasicApp\\Admin\\": "src/"
+        }
+    }
+}
