@@ -14,3 +14,11 @@ if (!function_exists('register_fontawesome7'))
         add_style(render_view('BasicApp\Fontawesome7\styles', $params), true, $renderer);
     }
 }
+
+if (!function_exists('fontawesome7_icon'))
+{
+    function fontawesome7_icon(array $attributes = []) : string
+    {
+        return view_cell('Fontawesome7Icon', $attributes);
+    }
+}

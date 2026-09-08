@@ -7,9 +7,9 @@ namespace BasicApp\Fontawesome7\Cells;
 
 use CodeIgniter\View\Cells\Cell;
 
-class FaIcon extends Cell
+class Fontawesome7Icon extends Cell
 {
-    protected string $view = __DIR__ . '/../../cells/fa-icon.php';
+    protected string $view = __DIR__ . '/../../cells/fontawesome7-icon.php';
 
     public $icon;
 }
