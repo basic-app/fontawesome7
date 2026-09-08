@@ -17,8 +17,17 @@ if (!function_exists('register_fontawesome7'))
 
 if (!function_exists('fontawesome7_icon'))
 {
-    function fontawesome7_icon(array $attributes = []) : string
+    function fontawesome7_icon($icon) : string
     {
+        if (is_string($icon))
+        {
+            $attributes = ['icon' => $icon];
+        }
+        else
+        {
+            $attributes = $icon;
+        }
+
         return view_cell('Fontawesome7Icon', $attributes);
     }
 }
