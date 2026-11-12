@@ -3,7 +3,10 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "BasicApp\\Fontawesome7\\": "src/"
+            "BasicApp\\Fontawesome7\\": "src"
         }
+    },
+    "require": {
+        "basic-app/publisher": "*"
     }
 }

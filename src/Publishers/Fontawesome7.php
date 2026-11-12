@@ -5,7 +5,7 @@
  */
 namespace BasicApp\Fontawesome7\Publishers;
 
-use BasicApp\Core\Publisher;
+use BasicApp\Publisher\Publisher;
 
 class Fontawesome7 extends Publisher
 {
@@ -38,8 +38,8 @@ class Fontawesome7 extends Publisher
      */
     public function publish(): bool
     {
-        $this->deleteFiles($this->destination);
-
-        return parent::publish();
+        return $this->wipe()
+            ->addPath('/')
+            ->merge(true);
     }
 }
