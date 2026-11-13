@@ -9,19 +9,12 @@ use BasicApp\Publisher\Publisher;
 
 class Fontawesome7 extends Publisher
 {
+    protected $customRestrictions = '*';
+
     /**
      * Tell Publisher where to create destination directory.
      */
     protected $createDestination = true;
-
-    /**
-     * Tell Publisher where to get the files.
-     * Since we will use Composer to download
-     * them we point to the "vendor" directory.
-     *
-     * @var string
-     */
-    protected $source = __DIR__ . '/../../assets';
 
     /**
      * FCPATH is always the default destination,
@@ -39,7 +32,14 @@ class Fontawesome7 extends Publisher
     public function publish(): bool
     {
         return $this->wipe()
-            ->addPath('/')
+            ->addUri('https://use.fontawesome.com/releases/v7.3.1/fontawesome-free-7.3.1-web.zip')
+            ->extractZip('fontawesome-free-7.3.1-web.zip')
+            ->removeScratchFile('fontawesome-free-7.3.1-web.zip')
+            ->setSource($this->getScratch() . 'fontawesome-free-7.3.1-web')
+            ->addPaths([
+                'css',
+                'webfonts'
+            ])
             ->merge(true);
     }
 }
