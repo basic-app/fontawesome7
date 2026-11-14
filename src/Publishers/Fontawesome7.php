@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * @author Basic App Dev Team
  * @license MIT
@@ -31,6 +32,11 @@ class Fontawesome7 extends Publisher
      */
     public function publish(): bool
     {
+        if (!$this->isEmpty($this->destination))
+        {
+            return true; // already installed
+        }
+
         return $this->wipe()
             ->addUri('https://use.fontawesome.com/releases/v7.3.1/fontawesome-free-7.3.1-web.zip')
             ->extractZip('fontawesome-free-7.3.1-web.zip')
