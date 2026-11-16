@@ -1,9 +1,11 @@
 <?php
+
 declare(strict_types=1);
 /**
  * @author Basic App Dev Team
  * @license MIT
  */
+
 namespace BasicApp\Fontawesome7\Publishers;
 
 use BasicApp\Publisher\Publisher;
@@ -32,8 +34,7 @@ class Fontawesome7 extends Publisher
      */
     public function publish(): bool
     {
-        if (!$this->isEmpty($this->destination))
-        {
+        if (!$this->isEmpty($this->destination)) {
             return true; // already installed
         }
 
