@@ -14,5 +14,5 @@ class Fontawesome7Icon extends Cell
 {
     protected string $view = __DIR__ . '/../../resources/Views/fontawesome7-icon.php';
 
-    public $icon;
+    public ?string $icon = null;
 }

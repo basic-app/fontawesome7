@@ -12,12 +12,12 @@ use BasicApp\Publisher\Publisher;
 
 class Fontawesome7 extends Publisher
 {
-    protected $customRestrictions = '*';
+    protected ?string $customRestrictions = '*';
 
     /**
      * Tell Publisher where to create destination directory.
      */
-    protected $createDestination = true;
+    protected bool $createDestination = true;
 
     /**
      * FCPATH is always the default destination,
